@@ -30,11 +30,11 @@ var promises = xYourHeart.promises();
 
 promises
   .will(doSomething)
-    .success(function(){
-      console.log(':-)')
+    .success(function(data){
+      console.log('Got an array back with ' + data.length + ' values. :-)');
     })
-    .failure(function() {
-      console.log(':-(');
+    .failure(function(err) {
+      console.log('We got this error: ' . err.toString() + ' :-(');
     })
   .then(function() {
     console.log('do nothing but continue to next step as success');
